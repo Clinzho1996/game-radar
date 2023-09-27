@@ -9,6 +9,7 @@ import Sidebar from "@/components/sidebar/Sidebar";
 import GameCard from "@/components/GameCard/GameCard";
 import axios from "axios";
 import Image from "next/image";
+import SkeletonLoader from "@/components/skeleton/Skeleton";
 
 function Browse() {
   const session = useSession();
@@ -51,9 +52,7 @@ function Browse() {
         <div className={styles.gameContainer}>
           <h2>This Week</h2>
           {loading ? (
-            <div className={styles.loading}>
-              <Image src="/loader.svg" alt="loading" width={100} height={100} />
-            </div>
+            <SkeletonLoader />
           ) : (
             <div className={styles.gameGrid}>
               {games.map((game) => (
