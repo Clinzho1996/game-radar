@@ -3,46 +3,25 @@ import styles from "./game.module.css";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FaInternetExplorer,
-  FaLinux,
-  FaMobile,
-  FaPhone,
-  FaPlaystation,
-  FaWindows,
-  FaXbox,
-} from "react-icons/fa";
-import { BsNintendo } from "react-icons/bs";
+import { iconMap } from "@/utils/iconsMap";
 
 function getPlatformIcon(platformId) {
-  switch (platformId) {
-    case 5: // Assuming 6 corresponds to PlayStation
-      return <FaPlaystation size="1.5em" color="#ffffffaf" />;
-    case 4: // Assuming 4 corresponds to Xbox
-      return <FaXbox size="1.5em" color="#ffffffaf" />;
-    case 3: // Assuming 4 corresponds to Xbox
-      return <FaMobile size="1.5em" color="#ffffffaf" />;
-    case 2: // Assuming 4 corresponds to Xbox
-      return <BsNintendo size="1.5em" color="#ffffffaf" />;
-    case 1: // Assuming 1 corresponds to Windows
-      return <FaWindows size="1.5em" color="#ffffffaf" />;
-    case 0: // Assuming 1 corresponds to Windows
-      return <FaLinux size="1.5em" color="#ffffffaf" />;
-    default:
-      return null;
+  const IconComponent = iconMap[platformId];
+
+  if (IconComponent) {
+    return <IconComponent size="1.5em" color="#ffffffaf" />;
   }
+
+  return null;
 }
 
 function GameCard({ game }) {
-  console.log("game.platforms:", game.platforms);
-
   // Map platform data to JSX elements
   const platformIcons = game.platforms.map((platformData) => {
     console.log("Platform ID:", platformData.platform.id);
     return (
       <li key={platformData.platform.id}>
-        {getPlatformIcon(platformData.platform.id)}
-        {platformData.name}
+        {getPlatformIcon(platformData.platform.slug)}
       </li>
     );
   });
