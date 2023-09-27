@@ -1,0 +1,54 @@
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.userContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+.userContainer img {
+  border-radius: 30px;
+}
+
+.userContainer h3 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.userContainer .signOut {
+  cursor: pointer;
+}
+
+.signin {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.signin .register {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: #fff;
+  color: #000 !important;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.nameDetails {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.nameDetails h2 {
+  font-size: 16px;
+  color: #000;
+}

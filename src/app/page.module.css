@@ -1,0 +1,111 @@
+.container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.938), rgba(0, 0, 0, 0.5)),
+    url("../../public/banner-signup.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-color: #000;
+  margin-top: 0px;
+  padding: 2% 6%;
+}
+
+.loading {
+  height: 100vh;
+  background-color: #111827;
+  color: #be123c;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.loading p {
+  padding-top: 10%;
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.signup {
+  padding: 6%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup .credentials {
+  flex: 2;
+  color: #fff;
+}
+
+.signup .credentials p {
+  margin-top: 20px;
+}
+
+.signup .credentials a {
+  color: #fff;
+  text-decoration: underline;
+}
+.signup form {
+  display: flex;
+  flex-direction: column;
+  background-color: #00000042;
+}
+
+.signup form input {
+  margin-top: 20px;
+  background-color: #0000008f;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.signup form button {
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.signup .google {
+  flex: 1;
+}
+
+.signup h2 {
+  color: #fff;
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.signup form {
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 6px;
+}
+
+.googleBtn {
+  margin-top: 20px;
+  width: 80%;
+  padding: 10px;
+  background-color: #33a4ec;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.googleBtnTwo {
+  margin-top: 10px;
+  width: 80%;
+  padding: 10px;
+  background-color: #3c7193;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}

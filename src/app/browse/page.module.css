@@ -1,0 +1,104 @@
+.container {
+  margin-top: 0px;
+  padding: 2% 4%;
+}
+
+.loading {
+  height: 100vh;
+  color: #be123c;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.loading p {
+  padding-top: 10%;
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.signup {
+  padding: 6%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup .credentials {
+  flex: 2;
+  color: #fff;
+}
+
+.signup .credentials p {
+  margin-top: 20px;
+}
+
+.signup .credentials a {
+  color: #fff;
+  text-decoration: underline;
+}
+.signup form {
+  display: flex;
+  flex-direction: column;
+  background-color: #00000042;
+}
+
+.signup form input {
+  margin-top: 20px;
+  background-color: #0000008f;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.signup form button {
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.signup .google {
+  flex: 1;
+}
+
+.signup h2 {
+  color: #fff;
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.signup form {
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 6px;
+}
+
+.main {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.gameContainer h2 {
+  font-size: 54px;
+  font-weight: 900;
+  font-family: "Roboto", sans-serif;
+}
+
+.gameGrid {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
