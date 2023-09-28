@@ -87,7 +87,7 @@ function GameDetails({ game }) {
       <div
         className="banner-single"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),url(${game.background_image})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgb(21, 21, 21)),url(${game.background_image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
