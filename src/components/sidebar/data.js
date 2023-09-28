@@ -21,12 +21,12 @@ export const sidebarData = [
       {
         label: "Wishlist",
         icon: FaHeart,
-        route: "/wishlist",
+        route: "/my-wishlist",
       },
       {
         label: "My Library",
         icon: FaGamepad,
-        route: "/library",
+        route: "/my-library",
       },
 
       {
@@ -47,7 +47,7 @@ export const sidebarData = [
       {
         label: "New Releases",
         icon: FaCalendarAlt,
-        route: "/newreleases",
+        route: "/new-releases",
       },
 
       {
@@ -66,7 +66,7 @@ export const sidebarData = [
         route: "/best-of-the-year",
       },
       {
-        label: "Popular in 2023",
+        label: "Popular in 2022",
         icon: FaRegListAlt,
         route: "/popular-in-2022",
       },
@@ -78,17 +78,17 @@ export const sidebarData = [
       {
         label: "PC",
         icon: FaDesktop,
-        route: "/platforms/pc",
+        route: "pc",
       },
       {
         label: "PlayStation 4",
         icon: FaPlaystation,
-        route: "/platforms/ps4",
+        route: "ps4",
       },
       {
         label: "Xbox One",
         icon: FaXbox,
-        route: "/platforms/xbox-one",
+        route: "xbox-one",
       },
     ],
   },
