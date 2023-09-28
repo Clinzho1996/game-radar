@@ -8,7 +8,6 @@ import { ToastContainer, toast } from "react-toastify";
 import Sidebar from "@/components/sidebar/Sidebar";
 import GameCard from "@/components/GameCard/GameCard";
 import axios from "axios";
-import Image from "next/image";
 import SkeletonLoader from "@/components/skeleton/Skeleton";
 
 function Browse() {
