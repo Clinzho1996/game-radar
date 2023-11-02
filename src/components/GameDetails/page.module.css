@@ -179,3 +179,26 @@
   gap: 10px;
   margin-right: 10px;
 }
+
+@media screen and (max-width: 968px) {
+  .gameContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+  }
+
+  .gameContainer .gameDetails {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .gameContainer .screenshot {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .gameContainer .screenshot img {
+    width: 150px;
+    height: 150px;
+  }
+}

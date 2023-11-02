@@ -66,6 +66,11 @@ const Navbar = () => {
             <h2>GameRadar</h2>
           </Link>
         </div>
+        <div className={styles.mobile}>
+          <Link href="/">
+            <h2>GR</h2>
+          </Link>
+        </div>
         <form onSubmit={handleSearch}>
           <input
             type="text"

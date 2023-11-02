@@ -129,4 +129,17 @@
   .signup form {
     width: 360px;
   }
+
+  .signup h2 {
+    font-size: 32px;
+  }
+
+  .google h2 {
+    display: none;
+  }
+
+  .googleBtn,
+  .googleBtnTwo {
+    width: 100%;
+  }
 }
