@@ -1,10 +1,18 @@
 .container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.938), rgba(0, 0, 0, 0.5)),
+    url("../../public/banner-signup.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-color: #000;
   margin-top: 0px;
-  padding: 2% 4%;
+  padding: 2% 6%;
 }
 
 .loading {
   height: 100vh;
+  background-color: #111827;
   color: #be123c;
   flex: 1;
   display: flex;
@@ -20,7 +28,7 @@
 
 .signup {
   padding: 6%;
-  margin-top: 50px;
+  margin-top: 100px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -80,29 +88,45 @@
   border-radius: 6px;
 }
 
-.main {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 20px;
-  overflow: hidden;
+.googleBtn {
+  margin-top: 20px;
+  width: 80%;
+  padding: 10px;
+  background-color: #33a4ec;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
 }
 
-.gameContainer {
-  width: -100%;
+.googleBtnTwo {
+  margin-top: 10px;
+  width: 80%;
+  padding: 10px;
+  background-color: #3c7193;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
 }
 
-.gameContainer h2 {
-  font-size: 54px;
-  font-weight: 900;
-  font-family: "Roboto", sans-serif;
-}
+@media screen and (max-width: 968px) {
+  .container {
+    padding: 0px;
+  }
+  .signin .register {
+    font-size: 12px;
+    display: none;
+  }
 
-.gameGrid {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 10px;
+  .signup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .signup form {
+    width: 360px;
+  }
 }

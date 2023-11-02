@@ -33,6 +33,7 @@ function Browse() {
         setLoading(false);
       });
   }, []);
+  
 
   useEffect(() => {
     if (session.status === "unauthenticated") {

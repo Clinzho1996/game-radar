@@ -1,6 +1,8 @@
-import AuthProvider from "@/components/AuthProvider/AuthProvider";
+import { SessionProvider } from "@/components/AuthProvider/AuthProvider";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { getServerSession } from "next-auth";
+import Login from "@/components/Login";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,11 +11,14 @@ export const metadata = {
   description: "Developed by Confidence Emonena Ochuko",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const session = await getServerSession();
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>{children}</AuthProvider>
+        <SessionProvider session={session}>
+          {!session ? <Login /> : <div>{children}</div>}
+        </SessionProvider>
       </body>
     </html>
   );

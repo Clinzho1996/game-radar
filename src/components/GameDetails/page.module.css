@@ -166,3 +166,16 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.gameDetails .creators {
+  margin-top: 10px;
+}
+
+.creators h4 {
+  margin-bottom: 10px;
+}
+.creators img {
+  border-radius: 100%;
+  gap: 10px;
+  margin-right: 10px;
+}

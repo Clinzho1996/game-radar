@@ -11,7 +11,8 @@ import axios from "axios";
 import { iconMap } from "@/utils/iconsMap";
 
 function getPlatformIcon(platformId) {
-  const IconComponent = iconMap[platformId];
+  console.log("Platform ID:", platformId);
+  const IconComponent = iconMap[platformId]?.default;
 
   if (IconComponent) {
     return <IconComponent size="1.5em" color="#ffffffaf" />;
@@ -21,10 +22,6 @@ function getPlatformIcon(platformId) {
 }
 
 function GameDetails({ game }) {
-  const { data: session, status } = useSession();
-  const [value, setValue] = useState("");
-  const router = useRouter();
-
   const platformIcons = game.platforms.map((platformData) => {
     console.log("Platform ID:", platformData.platform.id);
     return (
@@ -34,46 +31,23 @@ function GameDetails({ game }) {
     );
   });
 
-  // Function to get the name initials from the user's name
-  const getNameInitials = (name) => {
-    if (!name) return "";
-    const initials = name
-      .split(" ")
-      .map((word) => word.charAt(0))
-      .join("");
-    return initials.toUpperCase();
-  };
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (value) {
-      localStorage.setItem("searchText", value);
-      router.push("/search", { state: value, replace: true });
-      setValue("");
-    }
-  };
-
-  const handleSignOut = async () => {
-    await signOut();
-    toast.success("You are successfully signed out.", {
-      autoClose: 5000,
-      onClose: () => {
-        router?.push("/");
-      },
-    });
-  };
-
   const [screenshots, setScreenshots] = useState([]);
+  const [loadingScreenshots, setLoadingScreenshots] = useState(true);
+  const [creators, setCreators] = useState([]);
+  const [loadingCreators, setLoadingCreators] = useState(true);
 
   const fetchGameScreenshots = async () => {
     try {
+      setLoadingScreenshots(true);
       const response = await axios.get(
         `https://api.rawg.io/api/games/${game.id}/screenshots?key=${process.env.NEXT_PUBLIC_RAWG_API_KEY}`
       );
-      const screenshotsData = response.data.results; // Assuming the screenshots are in the 'results' property
+      const screenshotsData = response.data.results;
       setScreenshots(screenshotsData);
     } catch (error) {
       console.error("Error fetching game screenshots:", error);
+    } finally {
+      setLoadingScreenshots(false);
     }
   };
 
@@ -143,15 +117,29 @@ function GameDetails({ game }) {
             </div>
           </div>
           <div className={styles.screenshot}>
-            {screenshots.map((screenshot, index) => (
-              <Image
-                key={index}
-                src={screenshot.image}
-                alt={`Screenshot ${index + 1}`}
-                width={300}
-                height={200}
-              />
-            ))}
+            {loadingScreenshots ? (
+              <div className={styles.loadingScreenshots}>
+                <Image
+                  src="/loader.svg"
+                  alt="Loading..."
+                  width={100}
+                  height={100}
+                />
+              </div>
+            ) : (
+              <>
+                {screenshots.map((screenshot, index) => (
+                  <div key={index}>
+                    <Image
+                      src={screenshot.image}
+                      alt={`Screenshot ${index + 1}`}
+                      width={300}
+                      height={200}
+                    />
+                  </div>
+                ))}
+              </>
+            )}
           </div>
         </div>
       </div>
