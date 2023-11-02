@@ -91,7 +91,8 @@
   }
 
   .userContainer h3,
-  .nameDetails {
+  .nameDetails,
+  .userContainer img {
     display: none;
   }
 }
