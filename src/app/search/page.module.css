@@ -3,6 +3,10 @@
   padding: 2% 4%;
 }
 
+.mobile {
+  display: none;
+}
+
 .loading {
   height: 100vh;
   color: #be123c;
@@ -156,4 +160,49 @@
 .nameDetails h2 {
   font-size: 16px;
   color: #000;
+}
+
+@media screen and (max-width: 968px) {
+  .navbar {
+    padding: 0px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .navbar .logo {
+    display: none;
+    margin: 0;
+  }
+
+  .mobile {
+    display: block;
+    z-index: 200;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 30px;
+  }
+
+  .mobile h2 {
+    font-size: 16px;
+    color: #000;
+  }
+  .signin {
+    font-size: 12px;
+    display: none;
+  }
+
+  .navbar form {
+    width: 100%;
+  }
+
+  .userContainer h3,
+  .nameDetails,
+  .userContainer img {
+    display: none;
+  }
+
+  .gameContainer h2 {
+    font-size: 28px;
+    padding-bottom: 30px;
+  }
 }

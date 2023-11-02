@@ -26,7 +26,8 @@ function Search() {
 
   const fetchSearch = async () => {
     if (searchText.trim() === "") {
-      return;l
+      return;
+      l;
     }
     setIsLoading(true);
     try {
@@ -40,6 +41,16 @@ function Search() {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  // Function to get the name initials from the user's name
+  const getNameInitials = (name) => {
+    if (!name) return "";
+    const initials = name
+      .split(" ")
+      .map((word) => word.charAt(0))
+      .join("");
+    return initials.toUpperCase();
   };
 
   // Fetch search results when the component mounts or when searchText changes
@@ -73,6 +84,11 @@ function Search() {
         <div className="logo">
           <Link href="/">
             <h2>GameRadar</h2>
+          </Link>
+        </div>
+        <div className={styles.mobile}>
+          <Link href="/">
+            <h2>GR</h2>
           </Link>
         </div>
         <form onSubmit={Search}>
