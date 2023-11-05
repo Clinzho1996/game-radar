@@ -6,7 +6,7 @@ import Sidebar from "../sidebar/Sidebar";
 import Image from "next/image";
 import axios from "axios";
 import { iconMap } from "@/utils/iconsMap";
-import ReactHtmlParser from "react-html-parser";
+import DangerouslySetInnerHTML from "dangerously-set-inner-html";
 
 function getPlatformIcon(platformId) {
   console.log("Platform ID:", platformId);
@@ -86,7 +86,9 @@ function GameDetails({ game }) {
             </div>
             <div className={styles.about}>
               <h3>About</h3>
-              <p>{ReactHtmlParser(game.description)}</p>
+              <p>
+                <DangerouslySetInnerHTML html={game.description} />
+              </p>
             </div>
             <div className={styles.item}>
               <p>
