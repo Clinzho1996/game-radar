@@ -22,7 +22,7 @@ function getPlatformIcon(platformId) {
 }
 
 function GameDetails({ game }) {
-  const platformIcons = game.platforms.map((platformData) => {
+  const platformIcons = game.platforms?.map((platformData) => {
     console.log("Platform ID:", platformData.platform.id);
     return (
       <li key={platformData.platform.id}>

@@ -17,7 +17,7 @@ function getPlatformIcon(platformId) {
 
 function GameCard({ game }) {
   // Map platform data to JSX elements
-  const platformIcons = game.platforms.map((platformData) => {
+  const platformIcons = game.platforms?.map((platformData) => {
     console.log("Platform ID:", platformData.platform.id);
     return (
       <li key={platformData.platform.id}>
