@@ -35,7 +35,7 @@ const Navbar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (value) {
+    if (value.trim() !== "") {
       // Save the search text to localStorage
       localStorage.setItem("searchText", value);
 

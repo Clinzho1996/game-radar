@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import Navbar from "../navbar/Navbar";
 import styles from "./page.module.css";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import Sidebar from "../sidebar/Sidebar";
-import SkeletonLoader from "../skeleton/Skeleton";
 import Image from "next/image";
 import axios from "axios";
 import { iconMap } from "@/utils/iconsMap";
+import ReactHtmlParser from "react-html-parser";
 
 function getPlatformIcon(platformId) {
   console.log("Platform ID:", platformId);
@@ -88,7 +86,7 @@ function GameDetails({ game }) {
             </div>
             <div className={styles.about}>
               <h3>About</h3>
-              <p>{game.description}</p>
+              <p>{ReactHtmlParser(game.description)}</p>
             </div>
             <div className={styles.item}>
               <p>
